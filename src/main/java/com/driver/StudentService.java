@@ -6,52 +6,34 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StudentService
-{
+public class StudentService {
     @Autowired
     StudentRepository studentRepository;
-    public void addStudent(Student student)
-    {
+    void addStudent(Student student){
         studentRepository.addStudent(student);
     }
-
-    public void addTeacher(Teacher teacher)
-    {
+    void addTeacher(Teacher teacher){
         studentRepository.addTeacher(teacher);
     }
-
-    public void addStudentTeacherPair(String student, String teacher)
-    {
-        studentRepository.addStudentTeacherPair(student, teacher);
+    void studentTeacherPair(String student,String teacher){
+        studentRepository.studentTeacherPair(student,teacher);
     }
-
-    public Student getStudentByName(String name)
-    {
-        return studentRepository.getStudentByName(name);
+    Student stbyN(String orderId){
+        return studentRepository.stbyN(orderId);
     }
-
-    public Teacher getTeacherByName(String name)
-    {
-        return studentRepository.getTeacherByName(name);
+    Teacher tbyN(String teacher) {
+        return studentRepository.tbyN(teacher);
     }
-
-    public List<String> getStudentsByTeachername(String teacher)
-    {
-        return studentRepository.getStudentsByTeacherName(teacher);
+    List<String> ListOfStudent(String dpId){
+        return studentRepository.ListOfStudent(dpId);
     }
-
-    public List<String> getAllStudents()
-    {
-        return studentRepository.getAllStudents();
+    List<String> ListOfAllStudents(){
+        return studentRepository.ListOfAllStudents();
     }
-
-    public void deleteTeacherByName(String teacher)
-    {
-        studentRepository.deleteTeacherByName(teacher);
+    void deleteTeacher(String id){
+        studentRepository.deleteTeacher(id);
     }
-
-    public void deleteAllTeachers()
-    {
-        studentRepository.deleteAllTeacher();
+    void DeleteAllTeachers(){
+        studentRepository.DeleteAllTeachers();
     }
 }
